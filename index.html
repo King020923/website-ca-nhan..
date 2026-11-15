@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Lê Nhân | Giới thiệu bản thân</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2faff;
+            color: #35566b;
+            line-height: 1.7;
+        }
+
+        /* THANH ĐIỀU HƯỚNG */
+        nav {
+            width: 100%;
+            padding: 17px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 3px 15px rgba(92, 157, 184, 0.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #438eae;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #527b91;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #2398c4;
+        }
+
+        /* PHẦN GIỚI THIỆU ĐẦU TRANG */
+        .hero {
+            width: 88%;
+            max-width: 1200px;
+            min-height: 520px;
+            margin: 45px auto;
+            padding: 45px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 35px;
+            background: linear-gradient(135deg, #d9f2fc, #eefaff, #d4edf8);
+            border: 1px solid #d0eaf5;
+            border-radius: 30px;
+            box-shadow: 0 12px 35px rgba(91, 157, 185, 0.13);
+        }
+
+        .hero-text h1 {
+            color: #438eae;
+            font-size: 42px;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h2 {
+            color: #5b9fbb;
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: #58798b;
+            margin-bottom: 25px;
+        }
+
+        .hero-text .hello {
+            display: inline-block;
+            padding: 8px 18px;
+            margin-bottom: 18px;
+            border-radius: 30px;
+            background: #ffffff;
+            color: #559db9;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 430px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #b9e4f3, #e8f8fd);
+            border: 8px solid rgba(255, 255, 255, 0.75);
+        }
+
+        .hero-photo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        /* NỘI DUNG CHÍNH */
+        .container {
+            width: 88%;
+            max-width: 1200px;
+            margin: 65px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #438eae;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #7898a9;
+            font-size: 15px;
+        }
+
+        /* CÁC THẺ THÔNG TIN */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            padding: 30px;
+            background: #ffffff;
+            border: 1px solid #d8edf5;
+            border-radius: 22px;
+            box-shadow: 0 7px 22px rgba(88, 151, 179, 0.09);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(88, 151, 179, 0.16);
+        }
+
+        .card h3 {
+            color: #4c9ab9;
+            font-size: 22px;
+            margin-bottom: 17px;
+        }
+
+        .card p {
+            color: #617f90;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .card ul {
+            padding-left: 22px;
+            color: #617f90;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        /* THÔNG TIN CÁ NHÂN */
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5f2f7;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item strong {
+            color: #438eae;
+        }
+
+        .info-item span {
+            text-align: right;
+        }
+
+        /* CHÂN TRANG */
+        footer {
+            margin-top: 80px;
+            padding: 30px 15px;
+            text-align: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #75bad3, #a5dced);
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* MÀN HÌNH TABLET */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr 0.85fr;
+                padding: 30px;
+                gap: 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 34px;
+            }
+
+            .hero-photo {
+                height: 360px;
+            }
+        }
+
+        /* MÀN HÌNH ĐIỆN THOẠI */
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 20px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .hero {
+                width: 92%;
+                margin: 25px auto;
+                padding: 25px 20px;
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-text h2 {
+                font-size: 20px;
+            }
+
+            .hero-photo {
+                height: 350px;
+                max-width: 100%;
+            }
+
+            .container {
+                width: 92%;
+                margin: 45px auto;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .card {
+                padding: 23px;
+            }
+
+            .info-item {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .info-item span {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- THANH ĐIỀU HƯỚNG -->
+    <nav>
+        <div class="logo">Nguyễn Lê Nhân</div>
+
+        <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#hobbies">Sở thích</a></li>
+            <li><a href="#goals">Mục tiêu</a></li>
+        </ul>
+    </nav>
+
+    <!-- PHẦN GIỚI THIỆU -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <div class="hello">WELCOME TO MY WEBSITE ✦</div>
+
+            <h1>Xin chào!</h1>
+
+            <h2>Mình là Nguyễn Lê Nhân</h2>
+
+            <p>
+                Chào mừng bạn đến với trang web nhỏ của mình!
+                Đây là nơi mình chia sẻ đôi nét về bản thân,
+                những sở thích và những mục tiêu mà mình muốn
+                hướng đến trong tương lai.
+            </p>
+        </div>
+
+        <div class="hero-photo">
+            <img src="./avatar.png" alt="Ảnh đại diện Nguyễn Lê Nhân">
+        </div>
+
+    </section>
+
+    <!-- NỘI DUNG GIỚI THIỆU -->
+    <main class="container" id="about">
+
+        <div class="section-title">
+            <h2>Một chút về mình ✦</h2>
+            <p>Những điều nhỏ bé tạo nên con người mình</p>
+        </div>
+
+        <div class="cards">
+
+            <!-- GIỚI THIỆU -->
+            <section class="card">
+                <h3>🌿 Giới thiệu</h3>
+
+                <p>
+                    Mình là Nguyễn Lê Nhân. Mình thích tận hưởng
+                    những điều giản dị trong cuộc sống và luôn
+                    muốn khám phá thêm những điều thú vị xung quanh.
+                    Mình rất vui khi bạn đã ghé thăm trang web nhỏ này!
+                </p>
+            </section>
+
+            <!-- THÔNG TIN CÁ NHÂN -->
+            <section class="card">
+                <h3>👤 Thông tin cá nhân</h3>
+
+                <div class="info-item">
+                    <strong>Họ và tên</strong>
+                    <span>Nguyễn Lê Nhân</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Ngày sinh</strong>
+                    <span>30/06/2009</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Trường</strong>
+                    <span>THPT Nguyễn Huệ</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Lớp</strong>
+                    <span>12C11</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Quê quán</strong>
+                    <span>Việt Nam</span>
+                </div>
+            </section>
+
+            <!-- SỞ THÍCH -->
+            <section class="card" id="hobbies">
+                <h3>🎧 Sở thích</h3>
+
+                <ul>
+                    <li>Nghe nhạc và xem phim</li>
+                    <li>Thưởng thức những món ăn ngon</li>
+                    <li>Ngắm cảnh và tận hưởng sự yên bình</li>
+                    <li>Đi chơi và dành thời gian cùng bạn bè</li>
+                </ul>
+            </section>
+
+            <!-- MỤC TIÊU -->
+            <section class="card" id="goals">
+                <h3>🎯 Mục tiêu tương lai</h3>
+
+                <p>
+                    Mình mong muốn không ngừng học hỏi và hoàn thiện
+                    bản thân mỗi ngày. Trong tương lai, mình hy vọng
+                    có thể theo đuổi những điều mình yêu thích, đạt được
+                    những mục tiêu đã đặt ra và tạo nên thật nhiều
+                    kỷ niệm đáng nhớ trên hành trình của mình.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- CHÂN TRANG -->
+    <footer>
+        <p>© 2026 Nguyễn Lê Nhân | Cảm ơn bạn đã ghé thăm website của mình 💙</p>
+    </footer>
+
+</body>
+</html>
+
